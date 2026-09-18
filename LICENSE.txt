@@ -1,0 +1,6 @@
+Skill Doctor
+Copyright (c) 2026 importerunwind374. All rights reserved.
+
+This software is provided for evaluation and audit purposes. Copying, redistribution,
+or resale requires a commercial license. Complete terms available from the author.
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
