@@ -1,7 +1,7 @@
 # Skill Doctor
 
 [![Scanned by Skill Doctor](https://img.shields.io/badge/Skill%20Doctor-96%2F100%20EXCELLENT-brightgreen)](https://github.com/Leelaloo/skill-doctor)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.txt)
+[![License: Source-Available](https://img.shields.io/badge/License-Source--Available-blue.svg)](LICENSE.txt)
 
 > **The pre-flight check for the agent skill supply chain — free to audit what you install, paid to gate what you publish.**
 
@@ -52,9 +52,9 @@ python3 scripts/doctor.py <target-skill-folder> --fix --apply
 
 ## Pricing & Tiers
 
-Skill Doctor is built on an **open-source core (MIT License)**. Safety features are free forever so anyone can safely inspect untrusted skills.
+Skill Doctor is built on a **source-available core**: the full code is public so anyone can inspect it end-to-end before running it, and the free features stay free forever.
 
-| Feature | Free Core (Open Source) | Publisher Toolkit ($19.99 list / $14.99 launch) |
+| Feature | Free Core (Source-Available) | Publisher Toolkit ($19.99 list / $14.99 launch) |
 | :--- | :---: | :---: |
 | **CLI Scanner & 0-100 Rubric** | Free Forever | Included |
 | **46 Security & Threat Rules** | Free Forever | Included |
@@ -81,4 +81,4 @@ Skill Doctor is a **static analysis tool**. It adheres to explicit security boun
 ## Repository & License
 
 - **GitHub Repository:** [Leelaloo/skill-doctor](https://github.com/Leelaloo/skill-doctor)
-- **License:** Open-source core licensed under the [MIT License](LICENSE.txt).
+- **License:** Source-available — free to install and use (including at work), free to read and self-verify; redistribution or resale requires permission. Full terms: [LICENSE.txt](LICENSE.txt).
