@@ -3,7 +3,7 @@
 [![Scanned by Skill Doctor](https://img.shields.io/badge/Skill%20Doctor-96%2F100%20EXCELLENT-brightgreen)](https://github.com/Leelaloo/skill-doctor)
 [![License: Source-Available](https://img.shields.io/badge/License-Source--Available-blue.svg)](LICENSE.txt)
 
-> **The pre-flight check for the agent skill supply chain — free to audit what you install, paid to gate what you publish.**
+> **The pre-flight check for the agent skill supply chain — free to audit
 
 Paste any Claude Code skill in. Get a 0-100 quality score, a DO-NOT-INSTALL safety gate, auto-remediation diffs, and self-contained SVG badges.
 
