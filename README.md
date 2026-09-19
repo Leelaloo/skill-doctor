@@ -3,7 +3,7 @@
 [![Scanned by Skill Doctor](https://img.shields.io/badge/Skill%20Doctor-96%2F100%20EXCELLENT-brightgreen)](https://github.com/Leelaloo/skill-doctor)
 [![License: Source-Available](https://img.shields.io/badge/License-Source--Available-blue.svg)](LICENSE.txt)
 
-> **The pre-flight check for the agent skill supply chain — free to audit
+> **The pre-flight check for the agent skill supply chain - free to audit 
 
 Paste any Claude Code skill in. Get a 0-100 quality score, a DO-NOT-INSTALL safety gate, auto-remediation diffs, and self-contained SVG badges.
 
@@ -50,23 +50,11 @@ python3 scripts/doctor.py <target-skill-folder> --fix --apply
 
 ---
 
-## Pricing & Tiers
+## Roadmap
 
-Skill Doctor is built on a **source-available core**: the full code is public so anyone can inspect it end-to-end before running it, and the free features stay free forever.
-
-| Feature | Free Core (Source-Available) | Publisher Toolkit ($19.99 list / $14.99 launch) |
-| :--- | :---: | :---: |
-| **CLI Scanner & 0-100 Rubric** | Free Forever | Included |
-| **46 Security & Threat Rules** | Free Forever | Included |
-| **DO-NOT-INSTALL Gate** | Free Forever | Included |
-| **SVG Badges ('Scanned by Skill Doctor')** | Free Forever | Included |
-| **`--fix` Safe Auto-Remediation** | Dry-Run Preview | Full Auto-Apply & Delta Rescan |
-| **GitHub CI Action Integration** | Manual Scripting | Included (`action/action.yml`) |
-| **Support & Priority Pattern Updates** | Community / Issues | Direct Support & Priority Updates |
-
-*Roadmap note:* A $49/mo Team Tier is planned for multi-repository organization policy enforcement later.
-
----
+- **Free, always:** the core scanner, the 46-check suite, and the DO-NOT-INSTALL gate will never be paywalled.
+- **Coming soon:** a Publisher Toolkit (GitHub CI action, `--fix` auto-remediation, priority threat updates) for people who ship skills for a living.
+- More checks every month — the threat landscape moves, and the scanner moves with it.
 
 ## Security Disclosure & Limitations
 
