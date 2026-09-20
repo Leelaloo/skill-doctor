@@ -3,7 +3,7 @@ name: skill-doctor
 description: Audits, validates, and security-scans other Claude Code agent skills before installing or publishing them. Use this when the user wants to check a skill for broken paths, invalid SKILL.md structure, prompt injection, hidden unicode tricks, or security flaws, or wants a quality score for a skill folder.
 license: Complete terms in LICENSE.txt
 metadata:
-  version: "0.2.4"
+  version: "0.2.5"
   author: "importerunwind374"
 ---
 
