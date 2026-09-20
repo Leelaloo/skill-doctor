@@ -3,7 +3,13 @@
 [![Scanned by Skill Doctor](https://img.shields.io/badge/Skill%20Doctor-96%2F100%20EXCELLENT-brightgreen)](https://github.com/Leelaloo/skill-doctor)
 [![License: Source-Available](https://img.shields.io/badge/License-Source--Available-blue.svg)](LICENSE.txt)
 
-> **The pre-flight check for the agent skill supply chain - free to audit 
+> **A free security scanner for Claude Code skills. 46 checks, one command, a 0-100 score  and a hard DO-NOT-INSTALL gate when it finds something dangerous.**
+
+```bash
+python3 scripts/doctor.py <skill-folder>
+```
+*Stdlib-only Python 3. Zero dependencies.*
+*Tip: scan individual skill folders. If you point it at a multi-skill collection, it will tell you and list the skill folders it found.*
 
 Paste any Claude Code skill in. Get a 0-100 quality score, a DO-NOT-INSTALL safety gate, auto-remediation diffs, and self-contained SVG badges.
 
