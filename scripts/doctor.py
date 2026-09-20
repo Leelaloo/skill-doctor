@@ -53,16 +53,38 @@ def main():
     def log(severity, message, file=None, line=None):
         findings.append({"severity": severity, "message": message, "file": file, "line": line})
 
-    if n > MAX_FILES:
-        findings.append({"severity": "HIGH", "message": f"oversized skill: more than {MAX_FILES} files — scan truncated, results are PARTIAL and deep files may be unscanned (also a common scanner-evasion tactic)", "file": None, "line": None})
+    # v0.2.5 — collection detection: a multi-skill repo ROOT is not a valid scan target.
+    # Scanning a collection root used to drown the user in misleading repo-wide
+    # findings (docs/ and CI files tripping patterns) with a confusing 0/100.
+    # Instead: detect it, say it plainly, list the real skill folders, and skip the
+    # per-module scans. Still DNI — it is not a single installable skill.
+    collection = False
+    if not os.path.isfile(os.path.join(target, "SKILL.md")):
+        found = []
+        for _r, _d, files in os.walk(target):
+            if "SKILL.md" in files:
+                found.append(os.path.relpath(os.path.join(_r, "SKILL.md"), target))
+                if len(found) > 50:
+                    break
+        if len(found) >= 2:
+            collection = True
+            total = len(found)
+            shown = ", ".join(found[:10]) + (f" (+{total - 10} more)" if total > 10 else "")
+            log("CRITICAL",
+                f"this folder is a skill COLLECTION ({total} skill folders found), not a single skill — "
+                f"scan each skill folder individually (found: {shown})", "SKILL.md")
 
-    for mod in CHECKS:
-        try:
-            mod.check(target, log)
-        except Exception as e:  # a broken check must not kill the audit
-            findings.append({"severity": "MEDIUM",
-                             "message": f"check '{mod.__name__}' crashed: {e}",
-                             "file": None, "line": None})
+    if not collection:
+        if n > MAX_FILES:
+            findings.append({"severity": "HIGH", "message": f"oversized skill: more than {MAX_FILES} files — scan truncated, results are PARTIAL and deep files may be unscanned (also a common scanner-evasion tactic)", "file": None, "line": None})
+
+        for mod in CHECKS:
+            try:
+                mod.check(target, log)
+            except Exception as e:  # a broken check must not kill the audit
+                findings.append({"severity": "MEDIUM",
+                                 "message": f"check '{mod.__name__}' crashed: {e}",
+                                 "file": None, "line": None})
 
     deduction = 0
     for sev, cap in (("CRITICAL", None), ("HIGH", 36), ("MEDIUM", 18), ("LOW", 10)):
